@@ -10,7 +10,7 @@ const Contact = () => {
       >
         <div className="col-span-12 lg:col-span-6">
           <div className="relative mb-16">
-            <div className="absolute rounded-full w-16 h-16 bg-cyan-300 z-1 -left-6 -top-2"></div>
+            <div className="absolute rounded-full w-16 h-16 bg-cyan-300 z-1 -left-6 -top-2-5"></div>
             <h1 className="absolute text-[#6c63ff] text-4xl font-bold">
               ERPInova
             </h1>
