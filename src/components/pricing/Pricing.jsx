@@ -89,7 +89,7 @@ const Pricing = () => {
   return (
     <section id="pricing">
       <motion.div
-        className="grid grid-cols-12 gap-6 px-10 md:px-24 pb-24 pt-14 md:pt-24"
+        className="grid grid-cols-12 gap-6 px-10 md:px-24 pb-24 pt-24"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
