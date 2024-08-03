@@ -2,6 +2,9 @@ import Basic from "../../assets/icons/basic.png";
 import Business from "../../assets/icons/business.png";
 import Entrepreneur from "../../assets/icons/enterpreneur.png";
 import { BsBookmarkCheckFill } from "react-icons/bs";
+import { FaListCheck } from "react-icons/fa6";
+import { MdBusinessCenter } from "react-icons/md";
+import { GiProgression } from "react-icons/gi";
 import { motion } from "framer-motion";
 
 const Pricing = () => {
@@ -84,10 +87,9 @@ const Pricing = () => {
   };
 
   return (
-    <section>
+    <section id="pricing">
       <motion.div
-        id="pricing"
-        className="grid grid-cols-12 gap-6 px-10 md:px-24 pb-24 pt-14 md:pt-0"
+        className="grid grid-cols-12 gap-6 px-10 md:px-24 pb-24 pt-14 md:pt-24"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -99,27 +101,29 @@ const Pricing = () => {
             variants={itemVariants}
           >
             <div
-              className={`p-10 rounded-xl shadow-xl ${
+              className={`p-10 rounded-xl shadow-xl lg:min-h-[430px] ${
                 index === 1
-                  ? "border-4 border-[#ce394f]"
-                  : "border-2 border-[#6c63ff]"
+                  ? "border-4 border-[#6c63ff]"
+                  : "border-2 border-cyan-500"
               }`}
             >
               <h1 className="text-black text-center font-bold text-4xl break-words mb-3">
                 {item.type}
               </h1>
               <div className="flex justify-center">
-                <img
-                  src={item.img}
-                  className={index === 1 ? "w-20" : "w-14"}
-                  alt="{item.img}"
-                />
+                {item.type === "Basic" ? (
+                  <FaListCheck className="text-cyan-500 text-6xl" />
+                ) : item.type === "Business" ? (
+                  <MdBusinessCenter className="text-[#6c63ff] text-8xl" />
+                ) : (
+                  <GiProgression className="text-cyan-500 text-6xl" />
+                )}
               </div>
               <h3
                 className={` text-center font-bold mt-3 ${
                   index === 1
-                    ? "text-4xl text-[#ce394f]"
-                    : "text-2xl text-cyan-600"
+                    ? "text-4xl text-[#6c63ff]"
+                    : "text-3xl text-cyan-600"
                 }`}
               >
                 {item.price}
@@ -130,7 +134,11 @@ const Pricing = () => {
                     key={benefitIndex}
                     className="relative flex items-center gap-2 text-black"
                   >
-                    <BsBookmarkCheckFill className="absolute top-1 text-[#0891B2]" />
+                    <BsBookmarkCheckFill
+                      className={`absolute top-1 ${
+                        index === 1 ? "text-[#6c63ff]" : "text-cyan-500"
+                      }`}
+                    />
                     <span className="ml-6">{benefit.description}</span>
                   </li>
                 ))}

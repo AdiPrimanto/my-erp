@@ -53,7 +53,7 @@ const About = () => {
           />
         </div>
         <div className="col-span-12 lg:col-span-6">
-          <div className="p-10 md:p-24">
+          <div className="p-10 md:pt-24">
             <h1 className="text-black font-bold text-4xl mb-8">
               Mengapa menggunakan{" "}
               <span className="text-[#6c63ff]">ERPInova?</span>

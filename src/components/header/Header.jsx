@@ -1,4 +1,3 @@
-import Navbar from "../navbar/Navbar";
 import Invoice from "../../assets/icons/invoice.svg";
 import { FaCircleCheck } from "react-icons/fa6";
 import { motion } from "framer-motion";
@@ -20,7 +19,6 @@ const Header = () => {
       animate="visible"
       variants={containerVariants}
     >
-      <Navbar />
       <div className="grid grid-cols-12">
         <div className="col-span-12 lg:col-span-6">
           <motion.div className="p-10 md:p-24" variants={itemVariants}>
